@@ -1,12 +1,17 @@
 ﻿using System;
+using MagicOnion.Hosting;
+using Microsoft.Extensions.Hosting;
+using System.Threading.Tasks;
 
 namespace MagicOnionServer
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            await MagicOnionHost.CreateDefaultBuilder()
+                .UseMagicOnion()
+                .RunConsoleAsync();
         }
     }
 }
