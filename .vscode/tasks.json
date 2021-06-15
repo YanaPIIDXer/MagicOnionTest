@@ -4,31 +4,6 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build-common",
-            "command": "dotnet",
-            "type": "shell",
-            "args": [
-                "build",
-                "Common/MagicOnionCommon.csproj"
-            ],
-            "group": "none",
-            "problemMatcher": "$msCompile"
-        },
-        {
-            "label": "deploy-to-client",
-            "command": "copy",
-            "type": "shell",
-            "args": [
-                "Common/bin/Debug/netstandard2.0/MagicOnionCommon.dll",
-                "Client/MagicOnionTest/Assets/Binary/"
-            ],
-            "group": "none",
-            "problemMatcher": "$msCompile",
-            "dependsOn": [
-                "build-common"
-            ]
-        },
-        {
             "label": "build",
             "command": "dotnet",
             "type": "shell",
@@ -37,10 +12,7 @@
                 "Server/MagicOnionServer.csproj"
             ],
             "group": "build",
-            "problemMatcher": "$msCompile",
-            "dependsOn": [
-                "deploy-to-client"
-            ]
+            "problemMatcher": "$msCompile"
         }
     ]
 }

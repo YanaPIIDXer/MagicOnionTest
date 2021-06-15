@@ -7,6 +7,6 @@
   <ItemGroup>
     <PackageReference Include="MagicOnion.Abstractions" Version="4.3.1" />
     <PackageReference Include="MessagePack.UnityShims" Version="2.2.85" />
+    <Compile Include="..\Client\MagicOnionTest\Assets\Scripts\Share\**\*.cs" />
   </ItemGroup>
-
 </Project>
