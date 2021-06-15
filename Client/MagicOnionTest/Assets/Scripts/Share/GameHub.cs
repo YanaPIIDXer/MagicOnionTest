@@ -17,21 +17,21 @@ namespace MagicOnionCommon
         /// <summary>
         /// 離脱
         /// </summary>
-        /// <param name="name">名前</param>
-        Task LeaveAsync(string name);
+        Task LeaveAsync();
 
         /// <summary>
         /// メッセージ送信
         /// </summary>
-        /// <param name="name">発言者名</param>
         /// <param name="message">発言内容</param>
-        Task SendMessageAsync(string name, string message);
+        Task SendMessageAsync(string message);
 
         /// <summary>
         /// 移動
         /// </summary>
-        /// <param name="player">プレイヤー情報</param>
-        Task MoveAsync(Player player);
+        /// <param name="X">X</param>
+        /// <param name="Y">Y</param>
+        /// <param name="Z">Z</param>
+        Task MoveAsync(float X, float Y, float Z);
     }
 
     /// <summary>
