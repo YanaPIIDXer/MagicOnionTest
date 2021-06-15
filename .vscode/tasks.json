@@ -4,21 +4,29 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "build-common",
+            "command": "dotnet",
+            "type": "shell",
+            "args": [
+                "build",
+                "Common/MagicOnionCommon.csproj"
+            ],
+            "group": "none",
+            "problemMatcher": "$msCompile"
+        },
+        {
             "label": "build",
             "command": "dotnet",
             "type": "shell",
             "args": [
                 "build",
-                // Ask dotnet build to generate full paths for file names.
-                "/property:GenerateFullPaths=true",
-                // Do not generate summary otherwise it leads to duplicate errors in Problems panel
-                "/consoleloggerparameters:NoSummary"
+                "Server/MagicOnionServer.csproj"
             ],
             "group": "build",
-            "presentation": {
-                "reveal": "silent"
-            },
-            "problemMatcher": "$msCompile"
+            "problemMatcher": "$msCompile",
+            "dependsOn": [
+                "build-common"
+            ]
         }
     ]
 }
